@@ -480,13 +480,33 @@ footer{
         padding: 24px;
     }
 }
-.education-row {
-    grid-template-columns: minmax(900px, 1fr) 220px;
+.education {
+    margin-top: 30px;
 }
 
-.education-row.reverse {
-    grid-template-columns: 220px minmax(900px, 1fr);
+/* Desktop: logo sits BESIDE the content (horizontal) */
+.education-row {
+    display: grid;
+    grid-template-columns: 1fr 160px;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 24px;
 }
+
+/* Alternate row: logo on the left, content on the right */
+.education-row.reverse {
+    grid-template-columns: 160px 1fr;
+}
+
+.education-row.reverse .education-content {
+    grid-column: 2;
+}
+
+.education-row.reverse .education-logo {
+    grid-column: 1;
+    grid-row: 1;
+}
+
 .education-logo {
     display: flex;
     align-items: center;
@@ -494,7 +514,7 @@ footer{
 }
 
 .education-logo img {
-    width: 180px;
+    width: 140px;
     height: auto;
     object-fit: contain;
 }
@@ -527,7 +547,7 @@ footer{
     }
 
     .education-logo img {
-        width: 90px;
-        height: 90px;
+        width: 110px;
+        height: auto;
     }
 }
